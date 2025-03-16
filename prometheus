@@ -1,0 +1,165 @@
+----------[PROMETHEUS AND GRAFANA]----------
+============================================
+
+
+logs
+database
+n/w
+[server monitoring] --> metrics
+
+17 Metrics upto 25 metrics
+
+300+ metrics upto 1000
+
+--------------[master]------------
+==================================
+
+create 
+prometheus master - server
+Prometheus slace - server ---[node explorer]
+
+
+create
+two ubuntu machine 
+open all traffic and all tcp
+
+
+sudo -i
+
+apt update
+
+wget https://github.com/prometheus/prometheus/releases/download/v2.40.5/prometheus-2.40.5.linux-amd64.tar.gzar.gz
+
+ls
+
+prometheus-2.33.3.linux-amd64.tar.gz 
+
+tar -xvzf prometheus-2.33.3.linux-amd64.tar.gz 
+
+ls
+
+prometheus-2.33.3.linux-amd64   prometheus-2.33.3.linux-amd64.tar.gz 
+
+ls [LICENCSE NOTICE	console_libraries		consoles	prometheus	prometheus.yml	promtool
+ls -lrta
+
+prometheus usr/local/bin ?
+cp prometheus /usr/local/bin
+
+vi prometheus.yml
+
+:q!
+./prometheus --config.file=prometheus.yml
+./prometheus --config.file=prometheus.yml &  --> backend running
+ps -ef | grep prometheus
+
+prometheus master port "9090"
+
+
+-------------[slave machine]------------
+========================================
+login
+ubuntu
+sudo -i
+apt update
+wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz
+ls
+node_exporter-1.3.1.linux-amd64.tar.gz	snap
+tar -xvzf node_exporter-1.3.1.linux-amd64.tar.gz
+ls
+node_exporter-1.3.1.linux-amd64	node_exporter-1.3.1.linux-amd64.tar.gz	
+cd node_exporter-1.3.1.linux-amd64
+ls
+cp node_exporter /usr/local/bin/
+./node_exporter		- port 9100
+ctrl c
+./node_exporter &
+
+
+go master node and open vi prometheus.yml
+edit the file
+must be aliengment be clear
+
+[ if your edit configuration file you have to restart a service ]
+ps -ef | grep prometheus
+kill -9 process name num
+./prometheus --config.file=prometheus.yml &
+
+
+---------[Grafana]----------
+
+grafana port 3000
+
+
+oss version 
+old version
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.3.1.linux-amd64.tar.gz
+tar -zxvf grafana-enterprise-9.3.1.linux-amd64.tar.gz
+ls
+cd grafana-8.3.4/
+cd bin
+ls
+cp grafana-server /usr/local/bin
+./grafana-server &
+
+grafana port master ip 0.0.0.0/3000
+
+
+default password
+admin
+admin
+
+create new password
+sathish
+sathish
+
+node exporter
+1860
+
+13978
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
